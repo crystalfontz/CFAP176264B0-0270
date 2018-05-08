@@ -140,7 +140,7 @@ void initEPD()
 
   //-----------------------------------------------------------------------------
   //more detail on the following commands and additional commands not used here	
-  //can be found on the CFAP176264A0-0270 datasheet on the Crystalfontz website	
+  //can be found on the CFAP176264B0-0270 datasheet on the Crystalfontz website	
   //-----------------------------------------------------------------------------
 
 
@@ -200,7 +200,7 @@ void initEPD()
   writeData(0x08);	//second half of 2 bytes: 8
 
 
-                    //VCM DS Settings
+  //VCM DS Settings
   writeCMD(0x82);
   writeData(0x08);
 
@@ -211,7 +211,6 @@ void initEPD()
   //set LUTs and panel setting
   //setRegisterLUT();
   //setOTPLUT();
-  //	176	 x	264
 }
 
 void setRegisterLUT()
