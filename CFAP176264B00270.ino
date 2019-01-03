@@ -35,21 +35,20 @@
 //=============================================================================
 // Connecting the Arduino to the display
 //
-// ARDUINO  |adapter        |Wire Color |Function
-// ---------+---------------+-----------+--------------------
-// D2       |19             |Yellow     |BS1 Not Used
-// D3       |17             |Green      |Busy Line
-// D4       |18             |Brown      |Reset Line
-// D5       |15             |Purple     |Data/Command Line
-// D10      |16             |Blue       |Chip Select Line
-// D11      |14             |White      |MOSI
-// D13      |13             |Orange     |Clock
-// 3.3V     |5              |Red        |Power
-// GND      |3              |Black      |Ground
+// ARDUINO |Wire Color |Function
+// --------+-----------+--------------------
+// D3      |Green      |Busy Line
+// D4      |Brown      |Reset Line
+// D5      |Purple     |Data/Command Line
+// D10     |Blue       |Chip Select Line
+// D11     |White      |MOSI
+// D13     |Orange     |Clock
+// 3.3V    |Red        |Power
+// GND     |Black      |Ground
 //
 // Short the following pins on the adapter board:
-// GND -> BS2
-// 0.47 -> RESE
+// GND  -> BS2
+// RESE -> .47ohms
 //=============================================================================
 // Creating image data arrays
 //
@@ -353,6 +352,7 @@ void loop()
   writeCMD(0x12);
   while (0 == digitalRead(EPD_READY));
   delay(2000);
+  while (1);
 
 
   //The remaining block of code is to demonstrate partial updates
